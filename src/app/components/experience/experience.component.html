@@ -1,0 +1,11 @@
+@for(experience of experience; track experience.experienceId) {
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1 class="card-title">{{ experience.jobTitle }}</h1>
+            <h2 class="card-subtitle mb-2 text-muted"><a href="{{experience.link}}" target="_blank">{{experience.companyName}}</a></h2>
+            <h3 class="card-subtitle mb-2 text-muted">{{ experience.employmentType }}</h3>
+            <h4 class="card-subtitle mb-2 text-muted">{{ experience.startDate | date: 'MM/yyyy' }} - {{ experience.endDate ? (experience.endDate | date: 'MM/yyyy') : 'Present' }}</h4>
+            <p class="card-subtitle mb-2 text-muted">{{ experience.description }}</p>
+        </div>
+    </div>
+}

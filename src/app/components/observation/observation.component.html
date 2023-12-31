@@ -1,0 +1,21 @@
+@for(observation of observation; track observation) {
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1 class="card-title">{{ observation.neighborhood }}</h1>
+            <p class="card-subtitle mb-2 text-muted">
+                Local Time: {{ observation.obsTimeLocal | date: 'MM/dd/yyyy' }} {{ observation.obsTimeLocal | date: 'hh:mm a' }}</p>              
+            <p class="card-subtitle mb-2 text-muted">Temperature: {{ observation.imperial.temp }}°F</p>
+            <p class="card-subtitle mb-2 text-muted">Humidity: {{ observation.humidity }}%</p>
+            <p class="card-subtitle mb-2 text-muted">UV: {{ observation.uv }}</p>
+            <p class="card-subtitle mb-2 text-muted">Wind Direction: {{ calculateWindDirection(observation.winddir) }}</p>
+            <p class="card-subtitle mb-2 text-muted">Heat Index: {{ observation.imperial.heatIndex }}°F</p>
+            <p class="card-subtitle mb-2 text-muted">Dew Point: {{ observation.imperial.dewpt }}°F</p>
+            <p class="card-subtitle mb-2 text-muted">Wind Chill: {{ observation.imperial.windChill }}°F</p>
+            <p class="card-subtitle mb-2 text-muted">Wind Speed: {{ observation.imperial.windSpeed }} mph</p>
+            <p class="card-subtitle mb-2 text-muted">Wind Gust: {{ observation.imperial.windGust }} mph</p>
+            <p class="card-subtitle mb-2 text-muted">Pressure: {{ observation.imperial.pressure }} in</p>
+            <p class="card-subtitle mb-2 text-muted">Precipitation Rate: {{ observation.imperial.precipRate }} in</p>
+            <p class="card-subtitle mb-2 text-muted">Precipitation Total: {{ observation.imperial.precipTotal }} in</p>
+        </div>
+    </div>
+}

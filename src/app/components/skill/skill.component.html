@@ -1,0 +1,15 @@
+@for (category of getUniqueCategories(); track skill)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+          <h1 class="card-title">{{ category }}</h1>
+          @for (skill of filteredSkills; track skill)
+          {
+            @if (skill.category === category)
+            {
+              <h2 class="card-subtitle mb-2 text-muted">{{ skill.skillName }}</h2>
+            } 
+          }
+        </div>
+    </div>
+}
