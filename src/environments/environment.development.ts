@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://ctgadd.com/api'
+    apiUrl: 'https://ctgadd.com/api/public'
 };

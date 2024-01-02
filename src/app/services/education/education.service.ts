@@ -12,7 +12,7 @@ export class EducationService {
   constructor(private http: HttpClient) { }
 
   public getEducation(): Observable<Education[]> {
-    return this.http.get<Education[]>(`${environment.apiUrl}/education.php`);
+    return this.http.get<Education[]>(`${environment.apiUrl}/education`);
   }
 
   public createEducation(education: Education): Observable<Education> {

@@ -12,7 +12,7 @@ export class VolunteerService {
   constructor(private http: HttpClient) { }
 
   public getVolunteer(): Observable<Volunteer[]> {
-    return this.http.get<Volunteer[]>(`${environment.apiUrl}/volunteer.php`);
+    return this.http.get<Volunteer[]>(`${environment.apiUrl}/volunteer`);
   }
 
   public createVolunteer(volunteer: Volunteer): Observable<Volunteer> {

@@ -12,6 +12,6 @@ export class ObservationService {
   constructor(private http: HttpClient) { }
 
   public getObservation(): Observable<Observation[]> {
-    return this.http.get<Observation[]>(`${environment.apiUrl}/observation.php`);
+    return this.http.get<Observation[]>(`${environment.apiUrl}/observation`);
   }
 }
