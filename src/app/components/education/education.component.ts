@@ -13,7 +13,7 @@ import { Education } from '../../models/education';
   styleUrl: './education.component.css'
 })
 export class EducationComponent implements OnInit {
-  public education: Education[] = [];
+  public educations: Education[] = [];
 
   constructor(private educationService: EducationService) { }
 
@@ -24,7 +24,7 @@ export class EducationComponent implements OnInit {
   public getEducation(): void {
     this.educationService.getEducation().subscribe({
       next: (response: Education[]) => {
-        this.education = response;
+        this.educations = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

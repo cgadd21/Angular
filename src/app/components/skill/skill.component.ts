@@ -13,7 +13,7 @@ import { SkillService } from '../../services/skill/skill.service';
   styleUrl: './skill.component.css'
 })
 export class SkillComponent implements OnInit {
-  public skill: Skill[] = [];
+  public skills: Skill[] = [];
   public filteredSkills: Skill[] = [];
 
   constructor(private skillService: SkillService) { }
@@ -25,8 +25,8 @@ export class SkillComponent implements OnInit {
   public getSkill(): void {
     this.skillService.getSkill().subscribe({
       next: (response: Skill[]) => {
-        this.skill = response;
-        this.filteredSkills = this.skill;
+        this.skills = response;
+        this.filteredSkills = this.skills;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -35,10 +35,10 @@ export class SkillComponent implements OnInit {
   }
 
   public getUniqueCategories(): string[] {
-    return [...new Set(this.skill.map(skill => skill.category))];
+    return [...new Set(this.skills.map(skill => skill.category))];
   }
 
   public filterSkillsByCategory(category: string): void {
-    this.filteredSkills = this.skill.filter(skill => skill.category === category);
+    this.filteredSkills = this.skills.filter(skill => skill.category === category);
   }
 }

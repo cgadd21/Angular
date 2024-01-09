@@ -13,7 +13,7 @@ import { Experience } from '../../models/experience';
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent implements OnInit {
-  public experience: Experience[] = [];
+  public experiences: Experience[] = [];
 
   constructor(private experienceService: ExperienceService) { }
 
@@ -24,7 +24,7 @@ export class ExperienceComponent implements OnInit {
   public getExperience(): void {
     this.experienceService.getExperience().subscribe({
       next: (response: Experience[]) => {
-        this.experience = response;
+        this.experiences = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

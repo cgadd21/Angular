@@ -13,7 +13,7 @@ import { VolunteerService } from '../../services/volunteer/volunteer.service';
   styleUrl: './volunteer.component.css'
 })
 export class VolunteerComponent implements OnInit {
-  public volunteer: Volunteer[] = [];
+  public volunteers: Volunteer[] = [];
 
   constructor(private volunteerService: VolunteerService) { }
 
@@ -24,7 +24,7 @@ export class VolunteerComponent implements OnInit {
   public getVolunteer(): void {
     this.volunteerService.getVolunteer().subscribe({
       next: (reponse: Volunteer[]) => {
-        this.volunteer = reponse;
+        this.volunteers = reponse;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

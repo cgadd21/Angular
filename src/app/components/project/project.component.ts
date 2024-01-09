@@ -13,7 +13,7 @@ import { Project } from '../../models/project';
   styleUrl: './project.component.css'
 })
 export class ProjectComponent implements OnInit {
-  public project: Project[] = [];
+  public projects: Project[] = [];
 
   constructor(private projectService: ProjectService) { }
 
@@ -24,7 +24,7 @@ export class ProjectComponent implements OnInit {
   public getProject(): void {
     this.projectService.getProject().subscribe({
       next: (response: Project[]) => {
-        this.project = response;
+        this.projects = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

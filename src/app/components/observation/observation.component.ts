@@ -13,7 +13,7 @@ import { Observation } from '../../models/observation';
   styleUrl: './observation.component.css'
 })
 export class ObservationComponent implements OnInit {
-  public observation: Observation[] = [];
+  public observations: Observation[] = [];
 
   constructor(private observationService: ObservationService) { }
 
@@ -24,7 +24,7 @@ export class ObservationComponent implements OnInit {
   public getObservation(): void {
     this.observationService.getObservation().subscribe({
       next: (reponse: Observation[]) => {
-        this.observation = reponse;
+        this.observations = reponse;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
